@@ -4,7 +4,7 @@ import fs from "fs";
 let server = http.createServer((req, res) => {
     const petRegExp = /^\/pets\/(\d+)$/; // Regular expression to match /pets/{index}
 
-    if (req.method === "GET" && req.url === "/pets") {
+    if (req.method === "GET" && (req.url === "/pets" || req.url === "/pets/")) {
         fs.readFile("../pets.json", "utf-8", function (error, text) {
             if (error) {
                 res.statusCode = 500;
