@@ -2,7 +2,7 @@ import express from "express"; //ES6 Module
 import fs from "fs";
 
 const app = express();
-app.use(express.json())
+app.use(express.json())  //Enable middleware for receiving JSON request body
 const port = 8000;
 
 app.get("/", (req, res) => {
@@ -72,7 +72,6 @@ app.post("/pets", (req, res) => {
         })
     })
 })
-
 
 app.listen(port, () => {
     console.log(`Example App listening on port ${port}`)
